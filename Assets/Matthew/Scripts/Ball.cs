@@ -16,7 +16,16 @@ public class Ball : MonoBehaviour
     {
         rb2 = gameObject.GetComponent<Rigidbody2D>();
 
-        rb2.velocity = new Vector2(initSpeed, initSpeed);
+        int coinFlip = Random.Range(1, 3);
+        if (coinFlip == 1)
+        {
+            rb2.velocity = new Vector2(initSpeed, initSpeed);
+        }
+        if (coinFlip == 2)
+        {
+            rb2.velocity = new Vector2(initSpeed, -initSpeed);
+        }
+        
     }
 
     // Update is called once per frame
