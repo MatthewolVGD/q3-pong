@@ -31,7 +31,24 @@ public class MatthewEffects : MonoBehaviour
         GameObject[] PowerUps;
         PowerUps = GameObject.FindGameObjectsWithTag("Powerup");
         int spawn = Random.Range(0, PowerUps.Length);
-        Instantiate(PowerUps[spawn]);
+        float spawnY = Random.Range
+                (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
+        float spawnX = Random.Range
+            (Camera.main.ScreenToWorldPoint(new Vector2(1, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - 1, 0)).x);
 
+        Vector2 spawnPosition = new Vector2(spawnX, spawnY);
+
+        GameObject powerUp = Instantiate(PowerUps[spawn], spawnPosition, Quaternion.identity);
+
+    }
+
+    public void PowerUp(string PowerUpName)
+    {
+        if (PowerUpName == "CameraSpin")
+        {
+            Camera cam = Camera.main;
+            Vector3 rotateAmount = new Vector3(0, 0, Random.Range(minRotAmount, maxRotAmount + 1));
+            cam.transform.eulerAngles = cam.transform.eulerAngles - rotateAmount;
+        }
     }
 }

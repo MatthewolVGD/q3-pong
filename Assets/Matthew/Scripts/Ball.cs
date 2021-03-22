@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour
 {
 
     #region Main Variables
+    public GameObject gameController;
     Rigidbody2D rb2;
     public float initSpeed; //Speed ball starts at
     public float addPercentage; //Percentage of current speed added whenever ball hits something, 1.1 means 10% added
@@ -51,6 +52,10 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag == "Goal")
         {
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Powerup")
+        {
+            gameController.GetComponent<MatthewEffects>().PowerUp(collision.gameObject.name);
         }
     }
 }
