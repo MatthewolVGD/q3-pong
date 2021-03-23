@@ -19,7 +19,7 @@ public class RightPaddleMovement : MonoBehaviour
         float paddleMove = Input.GetAxis("RightP");
         float paddleRotate = Input.GetAxis("RightPR");
         transform.position += new Vector3(0, paddleMove, 0) * scaler;
-        float yPos = Mathf.Clamp(transform.position.y, -5.0f, 5.0f);
+        float yPos = Mathf.Clamp(transform.position.y, -4.2f, 4.2f);
         transform.position = new Vector3(transform.position.x, yPos, 0);
 
         if (Input.GetKey(KeyCode.LeftArrow))
