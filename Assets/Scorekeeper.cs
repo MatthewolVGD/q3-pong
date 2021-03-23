@@ -23,7 +23,7 @@ public class Scorekeeper : MonoBehaviour
 
         if (leftScore == 11 || rightScore == 11)
         {
-            Debug.Log("One of you sucks");
+            //Debug.Log("One of you sucks");
         }
     }
 }
