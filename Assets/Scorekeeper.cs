@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Scorekeeper : MonoBehaviour
 {
@@ -21,9 +22,13 @@ public class Scorekeeper : MonoBehaviour
         rightText.text = System.Convert.ToString(rightScore);
         leftText.text = System.Convert.ToString(leftScore);
 
-        if (leftScore == 11 || rightScore == 11)
+        if (leftScore == 11)
         {
-            //Debug.Log("One of you sucks");
+            SceneManager.LoadScene("BlueWins");
+        }
+        if (rightScore == 11)
+        {
+            SceneManager.LoadScene("OrangeWins");
         }
     }
 }
