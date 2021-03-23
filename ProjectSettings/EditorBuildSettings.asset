@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Isaac/MainMenu.unity
     guid: 34ad34fc3d50c89448268470d06a3f9f
   - enabled: 1
+    path: Assets/Matthew/MainScene.unity
+    guid: bb3c148551b58a84889d327a7986399c
+  - enabled: 1
     path: Assets/Isaac/LevelTest.unity
     guid: 4628e47c524804e4a88b8bdc2d901a07
   - enabled: 1
